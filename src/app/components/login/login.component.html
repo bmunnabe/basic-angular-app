@@ -1,0 +1,25 @@
+<div fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-header class="login-title">
+      <mat-card-title>Account Login</mat-card-title>
+      <mat-card-title [style.color]="'red'" *ngIf="message">{{message}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div fxLayout fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+        <mat-form-field fxFlex="45%" fxFlex.xs="100%">
+          <input [(ngModel)]="username" matInput placeholder="Enter your username">
+        </mat-form-field>
+        <mat-form-field fxFlex="45%" fxFlex.xs="100%">
+          <input [(ngModel)]="password" matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions fxLayout="row" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+      <button (click)="loginClicked(username, password)" fxFlex="47%" mat-raised-button mat-button>Login</button>
+      <button routerLink="/signup" fxFlex="47%" mat-raised-button mat-button>Signup</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

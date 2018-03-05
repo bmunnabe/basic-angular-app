@@ -1,0 +1,38 @@
+<div fxLayoutAlign="center center">
+  <mat-card fxFlex="650px" fxFlex.lt-sm="100%">
+    <mat-card-header>
+      <mat-card-title>Signup</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div fxLayout="column" fxLayoutGap="20px" [formGroup]="signupForm">
+        <mat-form-field>
+          <input formControlName="username" matInput placeholder="Enter your username">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="password" matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="email" matInput placeholder="Enter your email">
+        </mat-form-field>
+        <mat-radio-group formControlName="sex">
+          <mat-radio-button value="MALE">Male</mat-radio-button>
+          <mat-radio-button value="FEMALE">Female</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field>
+          <textarea formControlName="address" matInput placeholder="Enter Address"></textarea>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions fxLayout="row" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+      <button (click)="formData = signupForm.value" fxFlex="47%" mat-raised-button mat-button>Save</button>
+      <button routerLink="" fxFlex="47%" mat-raised-button mat-button>Cancel</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<h3>This data will be stored on DB or can pass to REST</h3>
+<pre>
+    {{formData | json}}
+</pre>

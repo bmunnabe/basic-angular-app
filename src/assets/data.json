@@ -1,0 +1,6 @@
+{
+    "userdetails": [
+        { "username" : "munna", "password" : "munna" },
+        { "username" : "babu", "password" : "babu" },
+        { "username" : "admin", "password" : "admin" }]
+}
