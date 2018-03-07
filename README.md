@@ -3,8 +3,8 @@
 ## login details
 How to install APP
 
- `npm install
-  ng serve`
+ `npm install`
+  `ng serve`
   
 and then use below credential to login
   
