@@ -1,6 +1,13 @@
 # basic-angular-app
 
 ## login details
+How to install APP
+
+ `npm install
+  ng serve`
+  
+and then use below credential to login
+  
 `UserName : munna & Password : munna`
 ###
 or 
